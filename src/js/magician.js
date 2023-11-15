@@ -1,9 +1,9 @@
 import MathChar from './math';
 
 export default class Magician extends MathChar {
-  constructor(name, stoned, attack, range) {
-    super(name, stoned, attack, range);
-    this.stoned = false;
-    this.attack = 100;
+  constructor(name, _stoned, _attack, range) {
+    super(name, _stoned, _attack, range);
+    this._stoned = false;
+    this._attack = 100;
   }
 }

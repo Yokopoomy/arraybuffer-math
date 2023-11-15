@@ -1,8 +1,8 @@
 import Character from './character';
 
 export default class MathChar extends Character {
-  constructor(name, stoned, attack, range) {
-    super(name, stoned, attack);
+  constructor(name, _stoned, _attack, range) {
+    super(name, _stoned, _attack);
     this.range = range;
   }
 
@@ -14,9 +14,17 @@ export default class MathChar extends Character {
     let attack = this._attack;
     attack -= attack * ((this.range - 1) / 10);
 
-    if (this.stoned) {
+    if (this._stoned) {
       attack -= Math.log(this.range) * 5;
     }
     return (attack > 0) ? Math.floor(attack) : 0;
+  }
+
+  get stoned() {
+    return this._stoned;
+  }
+
+  set stoned(value) {
+    this._stoned = value;
   }
 }
